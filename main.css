@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.slider {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+.slider .holder {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #ebebeb;
+    padding: 10px;
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .slider .holder {
+        height: 250px;
+    }
+}
+
+.holder .position {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #1976d2;
+    color: #fff;
+    padding: 5px 8px;
+    z-index: 99;
+}
+
+.holder img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.holder img.active {
+    opacity: 1;
+}
+
+.slider .controllers {
+    background-color: #dddddd;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controllers .pagination {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controllers .pagination span {
+    width: 25px;
+    height: 25px;
+    background-color: #a1a1a1;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.controllers .pagination span.active {
+    background-color: #1976d2;
+}
+
+.controllers .prev, .controllers .next {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1976d2;
+    padding: 8px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.controllers .prev.disable, .controllers .next.disable {
+    background-color: rgba(25, 118, 210, .5);
+    cursor: no-drop;
+}
